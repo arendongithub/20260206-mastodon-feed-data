@@ -1,6 +1,7 @@
 import json
 import io
 from datetime import datetime
+import os
 
 import streamlit as st
 from playwright.sync_api import sync_playwright
@@ -97,4 +98,7 @@ def main():
 
 
 if __name__ == "__main__":
+    # Only when deployig to Steamlit Cloud
+    os.system('playwright install')
+    os.system('playwright install-deps')
     main()
